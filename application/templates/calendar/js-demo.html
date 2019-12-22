@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
     <script type="module" src="/components/calendar/build/sm-calendar.esm.js"></script>
     <script nomodule src="/components/calendar/build/sm-calendar.js"></script>
 </head>
 <body>
-<sm-calendar id="calendar"></sm-calendar>
+<sm-calendar id="calendar" theme="#00acc1"></sm-calendar>
 <script>
-    var events = [];
+    var events = JSON.parse('<%-JSON.stringify(events)%>');
     var calendar = document.getElementById('calendar');
+    calendar.events = [...events];
     calendar.addEventListener('cellClick', function(payload) {
+        var eventName = prompt('Please enter the event name. This is just a demo to demonstrate the features and it is completely customizable');
         events.push({
-            title: 'New Event',
+            title: eventName,
             description: 'sample description',
             start: payload.detail.from,
             end: payload.detail.to
         });
         calendar.events = [...events];
+    });
+    calendar.addEventListener('eventClick', function(payload) {
+        alert('you just clicked on the event - ' + payload.detail.event.title + ' this will give you the details about the clicked event and handling the actions is up to your implementation');
     });
 </script>
 </body>

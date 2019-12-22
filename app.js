@@ -8,6 +8,8 @@ var session = require('express-session');
 
 var config = require(path.join(__dirname, "application", "config", "config"));
 
+var getEvents = require(path.join(__dirname, "application", "utils", "eventUtils"));
+
 var app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -22,6 +24,8 @@ app.use('/components/calendar', express.static(path.join(__dirname, 'application
 
 app.use('/calendar', function (req, res, next)
 {
+    var events = getEvents();
+    res.locals.events = events;
     res.render('calendar/js-demo');
 });
 
