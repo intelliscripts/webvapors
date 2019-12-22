@@ -10,7 +10,7 @@
     <script nomodule src="/components/calendar/build/sm-calendar.js"></script>
 </head>
 <body>
-<sm-calendar id="calendar" theme="#00acc1"></sm-calendar>
+<sm-calendar id="calendar" theme="#00acc1" view="month"></sm-calendar>
 <script>
     var events = JSON.parse('<%-JSON.stringify(events)%>');
     var calendar = document.getElementById('calendar');

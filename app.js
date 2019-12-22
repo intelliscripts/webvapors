@@ -21,8 +21,10 @@ app.set('view engine', 'html');
 
 
 app.use('/components/calendar', express.static(path.join(__dirname, 'application', 'public', 'components', 'calendar')));
+app.use('/docs', express.static(path.join(__dirname, 'application', 'public', 'docs')));
 
-app.use('/calendar', function (req, res, next)
+
+app.use('/calendar/js-demo', function (req, res, next)
 {
     var events = getEvents();
     res.locals.events = events;
