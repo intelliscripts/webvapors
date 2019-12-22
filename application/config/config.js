@@ -4,7 +4,7 @@ config = require('./environments/' + process.env.NODE_ENV + '.js');
 
 config.server = {};
 config.server.env = process.env.NODE_ENV;
-config.server.port = process.env.PORT || 5000;
+config.server.port = process.env.NODE_PORT || 5000;
 
 config.jwt = {};
 config.jwt.secret = "7854jgkfdg854jgkfdjg895483jgkfdjgwqaseaads";
