@@ -8,6 +8,19 @@
     <script nomodule src="/components/calendar/build/sm-calendar.js"></script>
 </head>
 <body>
-<sm-calendar></sm-calendar>
+<sm-calendar id="calendar"></sm-calendar>
+<script>
+    var events = [];
+    var calendar = document.getElementById('calendar');
+    calendar.addEventListener('cellClick', function(payload) {
+        events.push({
+            title: 'New Event',
+            description: 'sample description',
+            start: payload.detail.from,
+            end: payload.detail.to
+        });
+        calendar.events = [...events];
+    });
+</script>
 </body>
 </html>
