@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.down-triangle {
+  float: right;
+  margin-top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid black;
+  margin-left: 9px;
+}
+
+.left-triangle {
+  float: right;
+  margin-top: 3px;
+  margin-right: 25px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 9px solid var(--theme-color);
+}
+.left-triangle:hover {
+  cursor: pointer;
+}
+
+.right-triangle {
+  margin-top: 3px;
+  margin-left: 25px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid var(--theme-color);
+}
+.right-triangle:hover {
+  cursor: pointer;
+}
+
+.sm-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 8px;
+  box-shadow: none;
+  border: none;
+  font-size: 14px;
+  background: #fff;
+}
+.sm-button.primary {
+  color: var(--theme-color);
+}
+.sm-button:hover {
+  cursor: pointer;
+}
+
+.day-view-container .view-header {
+  display: flex;
+  margin: 10px 0px;
+}
+.day-view-container .view-header .day-name {
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+}
+.day-view-container .view-content .date-row {
+  display: flex;
+}
+.day-view-container .view-content .date-row .date-cell {
+  flex: 1;
+  text-align: center;
+  padding: 11px;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 50%;
+}
+.day-view-container .view-content .date-row .date-cell.today {
+  border: 1px solid var(--theme-color);
+}
+.day-view-container .view-content .date-row .date-cell.selected {
+  background: var(--theme-color);
+  color: #fff !important;
+}
+.day-view-container .view-content .date-row .date-cell.grey-out {
+  color: #ccc;
+  cursor: not-allowed !important;
+}
+.day-view-container .view-content .date-row .date-cell:hover {
+  cursor: pointer;
+  background: var(--theme-color);
+  opacity: 0.4;
+  color: #fff !important;
+}
+
+.month-view-container .month-row {
+  display: flex;
+  margin: 10px;
+}
+.month-view-container .month-row .month-cell {
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+  font-weight: 300;
+  font-size: 15px;
+}
+.month-view-container .month-row .month-cell.current-month {
+  color: var(--theme-color);
+}
+.month-view-container .month-row .month-cell:hover {
+  cursor: pointer;
+  color: var(--theme-color);
+}
+
+:host {
+  --theme-color: teal;
+}
+
+.sm-date-picker {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+.sm-date-picker .today-button {
+  float: right;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-icon img {
+  width: 25px;
+  height: 25px;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-icon img:hover {
+  cursor: pointer;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-dropdown {
+  padding: 8px;
+  text-align: center;
+  font-weight: 300;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-dropdown:hover {
+  cursor: pointer;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover {
+  position: absolute;
+  top: 38px;
+  left: -1px;
+  width: 300px;
+  box-shadow: 0 0 5px #ccc;
+  height: auto;
+  border: 1px solid #ccc;
+  min-height: 200px;
+  background: #fff;
+  z-index: 9;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover .sm-date-picker-popover-container {
+  padding: 8px;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover .sm-date-picker-popover-container .view-navigation {
+  display: flex;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover .sm-date-picker-popover-container .view-navigation .nav-item {
+  flex: 1;
+  text-align: center;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover .sm-date-picker-popover-container .view-navigation .nav-item.label {
+  flex: 3;
+  cursor: default;
+  color: var(--theme-color);
+  padding-top: 2px;
+}
+.sm-date-picker .sm-date-picker-container .sm-date-picker-popover .sm-date-picker-popover-container .view-navigation .nav-item.label span:hover {
+  cursor: pointer;
+}

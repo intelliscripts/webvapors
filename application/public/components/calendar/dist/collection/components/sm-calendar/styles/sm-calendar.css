@@ -1,0 +1,528 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.sm-button {
+  padding: 8px 10px;
+  box-shadow: none;
+  border: none;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+}
+.sm-button.primary {
+  color: var(--theme-color);
+}
+.sm-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.sm-button.active {
+  background: var(--theme-color);
+  color: #fff;
+}
+.sm-button.active:hover {
+  text-decoration: none;
+}
+.sm-button.flat {
+  background: var(--theme-color);
+  color: #fff;
+}
+
+.left-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #444444;
+}
+.left-triangle:hover {
+  cursor: pointer;
+}
+
+.right-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #444444;
+}
+.right-triangle:hover {
+  cursor: pointer;
+}
+
+.btn-list {
+  display: flex;
+}
+.sm-calendar-body {
+  display: flex;
+}
+.sm-calendar-body .view-container {
+  flex: 1;
+}
+.sm-calendar-body .context-panel-container {
+  width: 300px;
+  border-left: 1px solid #ddd;
+}
+
+.sm-calendar-header {
+  width: 100%;
+  height: var(--header-height);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 4px #ddd;
+  background: #f2f2f4;
+}
+.sm-calendar-header .header-container {
+  display: flex;
+}
+.sm-calendar-header .header-container .header-section {
+  flex: 1;
+}
+.sm-calendar-header .header-container .header-section .context-date-label {
+  text-align: center;
+  font-size: 18px;
+  font-weight: lighter;
+  padding-top: 15px;
+}
+.sm-calendar-header .header-container .header-section .view-range {
+  text-align: center;
+  font-size: 17px;
+  padding-top: 14px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation {
+  margin-top: 7px;
+  margin-left: 100px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation .nav-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 6px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation .nav-item .btn-list {
+  margin-top: -4px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation .nav-item .date-picker {
+  margin-left: 20px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation .nav-item .today-button {
+  font-weight: lighter;
+  margin: 2px 10px 0px;
+  font-size: 16px;
+}
+.sm-calendar-header .header-container .header-section .view-navigation .nav-item .today-button:hover {
+  cursor: pointer;
+}
+.sm-calendar-header .header-container .header-section .view-list {
+  margin-top: 7px;
+  float: right;
+  margin-right: 25px;
+  display: flex;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+.sm-calendar-header .header-container .header-section .view-list .view-name {
+  flex: 1;
+  padding: 8px 15px;
+  height: 18px;
+}
+.sm-calendar-header .header-container .header-section .view-list .view-name:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+.sm-calendar-header .header-container .header-section .view-list .view-name.active {
+  background: var(--theme-color);
+  color: #fff;
+}
+.sm-calendar-header .header-container .header-section .view-list .view-name:hover {
+  cursor: pointer;
+}
+
+.events-wrapper .event {
+  background: #d7e7f0;
+  border: 1px solid #78b0cc;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+.events-wrapper .event:hover {
+  cursor: pointer;
+}
+
+.view-container.day .view-wrapper .view-header, .view-container.week .view-wrapper .view-header {
+  border-bottom: 1px solid #ddd;
+  height: var(--view-header-height);
+  overflow-y: scroll;
+}
+.view-container.day .view-wrapper .view-header .row, .view-container.week .view-wrapper .view-header .row {
+  display: flex;
+}
+.view-container.day .view-wrapper .view-header .row .empty-left-scale, .view-container.week .view-wrapper .view-header .row .empty-left-scale {
+  width: var(--left-scale-width);
+}
+.view-container.day .view-wrapper .view-header .row .item, .view-container.week .view-wrapper .view-header .row .item {
+  flex: 1;
+  text-align: center;
+  font-weight: 300;
+  overflow: hidden;
+}
+.view-container.day .view-wrapper .view-header .row .item.context-date .view-header-column .day-date, .view-container.week .view-wrapper .view-header .row .item.context-date .view-header-column .day-date {
+  background: var(--theme-color);
+  color: #fff;
+}
+.view-container.day .view-wrapper .view-header .row .item.context-date .view-header-column .day-date:hover, .view-container.week .view-wrapper .view-header .row .item.context-date .view-header-column .day-date:hover {
+  opacity: 1;
+}
+.view-container.day .view-wrapper .view-header .row .item.today .view-header-column, .view-container.week .view-wrapper .view-header .row .item.today .view-header-column {
+  border-top: 4px solid var(--theme-color);
+}
+.view-container.day .view-wrapper .view-header .row .item.today .view-header-column .day-date, .view-container.week .view-wrapper .view-header .row .item.today .view-header-column .day-date {
+  margin-top: 6px;
+}
+.view-container.day .view-wrapper .view-header .row .item .view-header-column, .view-container.week .view-wrapper .view-header .row .item .view-header-column {
+  border-left: 1px solid #ddd;
+  height: var(--view-header-height);
+  box-sizing: border-box;
+}
+.view-container.day .view-wrapper .view-header .row .item .view-header-column .day-name, .view-container.week .view-wrapper .view-header .row .item .view-header-column .day-name {
+  display: inline-block;
+  font-size: 15px;
+}
+.view-container.day .view-wrapper .view-header .row .item .view-header-column .day-date, .view-container.week .view-wrapper .view-header .row .item .view-header-column .day-date {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  border-radius: 50%;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+.view-container.day .view-wrapper .view-header .row .item .view-header-column .day-date:hover, .view-container.week .view-wrapper .view-header .row .item .view-header-column .day-date:hover {
+  cursor: pointer;
+  background: var(--theme-color);
+  color: #fff;
+  opacity: 0.4;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative, .view-container.week .view-wrapper .view-body .view-body-relative {
+  position: relative;
+  overflow: auto;
+  height: calc(var(--component-height) - var(--header-height) - var(--view-header-height) - 10px);
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .left-scale, .view-container.week .view-wrapper .view-body .view-body-relative .left-scale {
+  width: var(--left-scale-width);
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .left-scale .step-container .step, .view-container.week .view-wrapper .view-body .view-body-relative .left-scale .step-container .step {
+  position: relative;
+  font-size: 15px;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .left-scale .step-container .step:after, .view-container.week .view-wrapper .view-body .view-body-relative .left-scale .step-container .step:after {
+  content: " ";
+  position: absolute;
+  top: -1.5px;
+  width: 15px;
+  background: #ddd;
+  height: 1px;
+  right: 0px;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .left-scale .step-container .step .step-time, .view-container.week .view-wrapper .view-body .view-body-relative .left-scale .step-container .step .step-time {
+  position: absolute;
+  right: 20px;
+  top: -9px;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container {
+  width: calc(100% - var(--left-scale-width));
+  position: absolute;
+  top: 0;
+  left: calc(var(--left-scale-width));
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative {
+  position: relative;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row {
+  display: flex;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row:not(:last-child), .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item {
+  flex: 1;
+  border-left: 1px solid #ddd;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item:hover, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item:hover {
+  cursor: crosshair;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event {
+  position: absolute;
+  overflow: hidden;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container {
+  padding: 5px;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container .event-title, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container .event-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.view-container.day .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container .event-description, .view-container.week .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container .event-description {
+  font-size: 13px;
+}
+
+.view-container.month .view-wrapper .view-header {
+  border-bottom: 1px solid #ddd;
+  height: var(--view-header-height);
+  overflow-y: scroll;
+}
+.view-container.month .view-wrapper .view-header .row {
+  display: flex;
+}
+.view-container.month .view-wrapper .view-header .row .item {
+  flex: 1;
+  text-align: center;
+  font-weight: 300;
+}
+.view-container.month .view-wrapper .view-header .row .item:not(:first-child) .view-header-column {
+  border-left: 1px solid #ddd;
+}
+.view-container.month .view-wrapper .view-header .row .item .view-header-column {
+  height: var(--view-header-height);
+}
+.view-container.month .view-wrapper .view-header .row .item .view-header-column .day-name {
+  display: inline-block;
+  font-size: 15px;
+  padding-top: 15px;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative {
+  position: relative;
+  overflow-y: scroll;
+  height: calc(var(--component-height) - var(--header-height) - var(--view-header-height) - 10px);
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative {
+  position: relative;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item {
+  flex: 1;
+  overflow: hidden;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item:hover {
+  cursor: crosshair;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item:not(:first-child) .cell-wrapper {
+  border-left: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item .cell-wrapper .cell-header {
+  text-align: right;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item .cell-wrapper .cell-header .cell-date {
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  display: inline-block;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item .cell-wrapper .cell-header .cell-date:hover {
+  cursor: pointer;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item.grey-out .cell-wrapper .cell-header .cell-date {
+  color: #aaa;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .grid-wrapper .row .item.context-date .cell-wrapper .cell-header .cell-date {
+  background: var(--theme-color);
+  color: #fff !important;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .view-more {
+  position: absolute;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .view-more:hover {
+  cursor: pointer;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event {
+  position: absolute;
+  overflow: hidden;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container {
+  padding: 3px;
+}
+.view-container.month .view-wrapper .view-body .view-body-relative .drawing-area-container .drawing-area-container-relative .events-wrapper .event .event-container .event-title {
+  font-size: 12px;
+}
+
+.context-panel-container .context-panel-wrapper .context-panel-header {
+  border-bottom: 1px solid #ddd;
+}
+.context-panel-container .context-panel-wrapper .context-panel-header .context-date {
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 17px;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .no-events {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #aaa;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event {
+  width: 90%;
+  margin: 10px auto;
+  border: 1px solid #ddd;
+  border-left: 3px solid #78b0cc;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event:hover {
+  cursor: pointer;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event .context-panel-event-header {
+  font-size: 14px;
+  margin: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event .context-panel-event-header .event-time {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event .context-panel-event-body {
+  margin: 5px 10px;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event .context-panel-event-body .event-title {
+  font-size: 14px;
+}
+.context-panel-container .context-panel-wrapper .context-panel-body .context-panel-event .context-panel-event-body .event-description {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.event-edit-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+.event-edit-container .event-edit-wrapper {
+  background: #fff;
+  width: 450px;
+  margin: 100px auto 0;
+  height: 250px;
+  padding: 10px;
+  border-top: 5px solid #78b0cc;
+}
+.event-edit-container .event-edit-wrapper .event-edit-header {
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+  padding: 0px 10px 10px 0px;
+  font-weight: 200;
+}
+.event-edit-container .event-edit-wrapper .event-edit-header .close {
+  float: right;
+}
+.event-edit-container .event-edit-wrapper .event-edit-header .close:hover {
+  cursor: pointer;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body {
+  margin-top: 20px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row {
+  margin-top: 15px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-label {
+  font-size: 15px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element.date-time-picker {
+  display: flex;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element.date-time-picker .date-picker {
+  flex: 1;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element.date-time-picker .date-picker sm-date-picker {
+  display: block;
+  width: 200px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element.date-time-picker .time-picker {
+  flex: 1;
+}
+.event-edit-container .event-edit-wrapper .event-edit-body .form-row .form-element.date-time-picker .time-picker sm-time-picker {
+  display: block;
+  width: 100px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-footer {
+  margin-top: 20px;
+}
+.event-edit-container .event-edit-wrapper .event-edit-footer button.ok-button {
+  width: 100px;
+  float: right;
+  margin-right: 50px;
+}
+
+:host {
+  --theme-color: teal;
+}
+
+.sm-calendar {
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.sm-calendar .clear {
+  clear: both;
+}

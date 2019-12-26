@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "components/sm-calendar/sm-calendar.js",
+    "components/sm-date-picker/sm-date-picker.js",
+    "components/sm-demo-calendar/sm-demo-calendar.js",
+    "components/sm-time-picker/sm-time-picker.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.8.1",
+    "typescriptVersion": "3.7.2"
+  },
+  "collections": [],
+  "bundles": []
+}
