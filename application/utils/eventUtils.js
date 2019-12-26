@@ -7,12 +7,12 @@ function generateId() {
     return Math.floor(100000000 + Math.random() * 900000000) + '';
 }
 
-function getEvent(title, description, start, end, text_color, bg_color) {
+function getEvent(title, description, start, end, text_color, background) {
     return{
         id: generateId(),
         start: start,
         end: end,
-        bg_color: bg_color,
+        background: background,
         description: description,
         text_color: text_color,
         title: title
